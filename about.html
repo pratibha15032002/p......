@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-main {
+            padding: 120px 10% 50px;
+            text-align: center;
+        }
+
+        /* Skills Grid Layout Fix */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 30px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 25px rgba(0, 242, 255, 0.2);
+        }
+
+        /* --- Image Size Fix --- */
+        .skill-icon {
+            width: 60px;
+            /* Standard Size */
+            height: 60px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Image stretch nahi hogi */
+        }
+
+        .skill-card h3 {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .highlight {
+            color: var(--accent-cyan);
+        }
+
+        .skills-title {
+            margin-top: 60px;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">P<span>ORTFOLIO</span></h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" style="color: var(--accent-cyan);">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="about-main">
+        <h1><span class="highlight">About Me</span></h1>
+        <p style="max-width: 700px; margin: 20px auto; color: var(--text-muted);">
+            I am a passionate fresher developer who enjoys creating simple, responsive, and user-friendly web
+            applications. I am currently building my skills in frontend and backend development and always eager to
+            learn and grow.
+        </p>
+
+        <h2 class="skills-title"><span class="highlight">SKILLS</span></h2>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                </div>
+                <h3>HTML5</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                </div>
+                <h3>CSS3</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JS">
+                </div>
+                <h3>JavaScript</h3>
+            </div>
+
+
+        </div>
+    </main>
+</body>
+
+</html>

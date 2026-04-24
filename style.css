@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-dark: #05051a;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --accent-cyan: #00f2ff;
+  --accent-purple: #7000ff;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* --- Animated Background Mesh --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(112, 0, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 242, 255, 0.05) 0%, transparent 40%);
+    z-index: -1;
+}
+
+/* --- Premium Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(5, 5, 26, 0.7);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo { font-size: 1.6rem; font-weight: 800; }
+.logo span { background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+nav a {
+    color: var(--text-muted);
+    margin-left: 35px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+nav a:hover { color: var(--accent-cyan); text-shadow: 0 0 10px rgba(0, 242, 255, 0.5); }
+
+/* --- Hero Section Redesign --- */
+.firstSection {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    gap: 60px;
+}
+
+.leftSection h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+.highlight { color: var(--accent-cyan); }
+
+.leftSection p { 
+    font-size: 1.25rem; 
+    color: var(--text-muted); 
+    margin-bottom: 40px; 
+    max-width: 500px;
+}
+
+/* --- Neon Buttons --- */
+.buttons { display: flex; gap: 20px; }
+.btn {
+    padding: 14px 35px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-filled { 
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    color: white;
+    border: none;
+}
+
+.btn-outline { 
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: var(--text-main);
+}
+
+.btn:hover { 
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(112, 0, 255, 0.3);
+}
+
+/* --- Floating Image Box with Glow --- */
+.image-box {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: var(--glass-bg);
+    border-radius: 24% 76% 35% 65% / 49% 30% 70% 51%;
+    border: 1px solid var(--glass-border);
+    padding: 15px;
+    animation: float 6s ease-in-out infinite, morph 15s ease-in-out infinite alternate;
+}
+
+.image-box::after {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    filter: blur(50px);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+
+.image-box {
+    width: 380px;
+    height: 380px;
+    position: relative;
+    background: var(--glass-bg);
+    border-radius: 50%; 
+    border: 2px solid var(--accent-cyan);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%;
+}
+
+
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes morph {
+    0% { border-radius: 24% 76% 35% 65% / 49% 30% 70% 51%; }
+    100% { border-radius: 76% 24% 65% 35% / 30% 49% 51% 70%; }
+}
+
+
+.contact-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+input, textarea {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--glass-border);
+    padding: 18px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+
+@media (max-width: 1000px) {
+    .firstSection { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
+    .leftSection h1 { font-size: 3rem; }
+    .image-box { width: 300px; height: 300px; }
+    .buttons { justify-content: center; }
+}

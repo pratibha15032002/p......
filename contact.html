@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-page { 
+            min-height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding-top: 80px;
+        }
+        .glass-form-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .glass-form-box h2 { margin-bottom: 30px; font-size: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo">P<span>ORTFOLIO</span></h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" style="color: var(--accent-cyan);">Contact</a>
+        </nav>
+    </header>
+
+    <div class="contact-page">
+        <div class="glass-form-box">
+            <h2>Let's <span class="highlight">touct with developer Team</span></h2>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+                <button type="submit" class="btn btn-filled" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
