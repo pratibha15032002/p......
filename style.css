@@ -162,7 +162,52 @@ nav a:hover { color: var(--accent-cyan); text-shadow: 0 0 10px rgba(0, 242, 255,
     border-radius: 50%;
 }
 
+/* --- Mobile Header Fix --- */
+@media (max-width: 1000px) {
+    header {
+        padding: 15px 5%; 
+    }
 
+    .menu-toggle {
+        display: block; 
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--text-main);
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 26, 0.98); 
+        backdrop-filter: blur(20px);
+        display: none; 
+        flex-direction: column;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--glass-border);
+        text-align: center;
+    }
+
+    
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 15px 0;
+        font-size: 1.1rem;
+        display: block;
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 1001px) {
+    .menu-toggle {
+        display: none;
+    }
+}
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
